@@ -16,3 +16,20 @@ class OrderPayment(AbstractBaseModel):
 
     def __str__(self):
         return self.payment_method
+
+
+class MpesaResponseBody(AbstractBaseModel):
+    body = models.JSONField()
+
+
+class MpesaTransaction(AbstractBaseModel):
+    receipt_number = models.CharField(max_length=255)
+    phone_number = models.CharField(max_length=255)
+    amount = models.DecimalField(max_digits=100, decimal_places=2)
+    merchant_request_id = models.CharField(max_length=255)
+    checkout_request_id = models.CharField(max_length=255)
+    transaction_result_code = models.CharField(max_length=255)
+    transaction_timestamp = models.FloatField()
+
+    def __str__(self):
+        return self.phone_number + " has paid " + str(self.amount)
