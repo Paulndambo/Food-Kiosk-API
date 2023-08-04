@@ -9,7 +9,7 @@ PAYMENT_METHOD_CHOICES = (
 
 class OrderPayment(AbstractBaseModel):
     order = models.ForeignKey("orders.Order", on_delete=models.CASCADE)
-    amount_payment = models.DecimalField(max_digits=10, decimal_places=2)
+    amount_paid = models.DecimalField(max_digits=10, decimal_places=2)
     phone_number = models.CharField(max_length=255)
     payment_method = models.CharField(max_length=255, choices=PAYMENT_METHOD_CHOICES)
     mpesa_data = models.JSONField(default=dict)
