@@ -13,6 +13,7 @@ ROLE_CHOICES = (
     ("customer", "Customer"),
 )
 
+
 GENDER_CHOICES = (
     ("male", "Male"),
     ("female", "Female"),
