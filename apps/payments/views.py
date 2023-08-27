@@ -32,7 +32,7 @@ class LipaNaMpesaGenericAPIView(generics.CreateAPIView):
             cl.stk_push(
                 phone_number=data.get('phone_number'),
                 amount=int(data.get('amount')),
-                callback_url="https://2c61-105-160-44-213.ngrok-free.app/payments/mpesa-payments/",
+                callback_url="https://food-kiosk.onrender.com/payments/mpesa-payments/",
                 account_reference="Perfin Mpesa",
                 transaction_desc="This is perfin mpesa transaction"
             )
